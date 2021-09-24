@@ -187,7 +187,7 @@ namespace LuaObfsucator
                     }
                     if (reachedEnd)
                     {
-                        throw new LexerException(sourceName, currentLine, "unfinished string");
+                        throw new SyntaxException(sourceName, currentLine, "unfinished string");
                     }
                 }
                 Advance();
@@ -203,7 +203,7 @@ namespace LuaObfsucator
                 int end = source.IndexOf("]]", currentIndex);
                 if (end == -1)
                 {
-                    throw new LexerException(sourceName, currentLine, "unfinished multiline string");
+                    throw new SyntaxException(sourceName, currentLine, "unfinished multiline string");
                 }
                 end += 2;
 
@@ -218,7 +218,7 @@ namespace LuaObfsucator
                 int end = source.IndexOf("]]", currentIndex);
                 if (end == -1)
                 {
-                    throw new LexerException(sourceName, currentLine, "unfinished multiline comment");
+                    throw new SyntaxException(sourceName, currentLine, "unfinished multiline comment");
                 }
                 end += 2;
 

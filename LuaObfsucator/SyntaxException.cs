@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace LuaObfsucator
 {
-    class LexerException : Exception
+    class SyntaxException : Exception
     {
-        public LexerException(string sourceName, int line, string message)
+        public SyntaxException(string sourceName, int line, string message)
             : base($"{sourceName}:{line}: {message}")
         {
         }
